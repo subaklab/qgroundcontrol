@@ -51,7 +51,7 @@
      <x>0</x>
      <y>0</y>
      <width>1024</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMGround">
@@ -70,8 +70,15 @@
      <string>Widgets</string>
     </property>
    </widget>
+   <widget class="QMenu" name="menuSubak">
+    <property name="title">
+     <string>Subak</string>
+    </property>
+    <addaction name="actionCrash_Onboard"/>
+   </widget>
    <addaction name="menuMGround"/>
    <addaction name="menuWidgets"/>
+   <addaction name="menuSubak"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionExit">
@@ -120,6 +127,11 @@
    </property>
    <property name="text">
     <string>Show Status Bar</string>
+   </property>
+  </action>
+  <action name="actionCrash_Onboard">
+   <property name="text">
+    <string>Crash Onboard</string>
    </property>
   </action>
  </widget>

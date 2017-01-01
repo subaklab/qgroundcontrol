@@ -241,6 +241,8 @@ MainWindow::MainWindow()
 #endif
 
     connect(_ui.actionStatusBar,  &QAction::triggered, this, &MainWindow::showStatusBarCallback);
+    connect(_ui.actionCrash_Onboard, &QAction::triggered,this, &MainWindow::crashOnboardCallback);
+
 
     connect(&windowNameUpdateTimer, &QTimer::timeout, this, &MainWindow::configureWindowName);
     windowNameUpdateTimer.start(15000);
@@ -400,6 +402,29 @@ void MainWindow::showStatusBarCallback(bool checked)
 {
     _showStatusBar = checked;
     checked ? statusBar()->show() : statusBar()->hide();
+}
+
+void MainWindow::crashOnboardCallback()
+{
+    QmlObjectListModel &_vehicles = * qgcApp()->toolbox()->multiVehicleManager()->vehicles();
+    for (int i=0; i< _vehicles.count(); i++) {
+        Vehicle* vehicle = qobject_cast<Vehicle*>(_vehicles[i]);
+
+        mavlink_message_t message;
+ //       mavlink_msg_subak_command_pack(uint8_t system_id, uint8_t component_id, mavlink_message_t* msg, uint8_t cmd);
+
+        mavlink_msg_subak_command_pack(qgcApp()->toolbox()->mavlinkProtocol()->getSystemId(),
+                                   qgcApp()->toolbox()->mavlinkProtocol()->getComponentId(),
+                                   &message,
+                                   SUBAK_CMD_CRASH_ONBOARD
+                                   );       // MAV_STATE
+        vehicle->sendMessageMultiple(message);
+        //vehicle->sendMessageOnLink(message);
+//        vehicle->sendMessageOnPriorityLink(message);
+    }
+
+    //call crash onboard script
+    //close(); test for working
 }
 
 void MainWindow::reallyClose(void)
