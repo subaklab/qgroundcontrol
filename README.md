@@ -22,8 +22,10 @@ The license terms are set in the COPYING.md file.
 ## Obtaining source code
 Source code for QGroundControl is kept on GitHub: https://github.com/mavlink/qgroundcontrol.
 ```
-git clone --recursive https://github.com/mavlink/qgroundcontrol.git
+git clone --recursive https://github.com/subaklab/qgroundcontrol.git
 ```
+Update libs/mavlink/include/mavlink/v1.0/ardupilotmega directory. Please add Subak dialect.
+
 Each time you pull new source to your repository you should run `git submodule update` to get the latest submodules as well. Since QGroundControl uses submodules, using the zip file for source download will not work. You must use git.
 
 ### User Manual
