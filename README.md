@@ -24,7 +24,7 @@ Source code for QGroundControl is kept on GitHub: https://github.com/mavlink/qgr
 ```
 git clone --recursive https://github.com/subaklab/qgroundcontrol.git
 ```
-Update libs/mavlink/include/mavlink/v1.0/ardupilotmega directory. Please add Subak dialect.
+Update libs/mavlink/include/mavlink/v1.0/ardupilotmega directory. Please add Subak dialect. [Download](https://www.amazon.com/clouddrive/share/8AFEOj3amS4pNc5qfPNwsgCjyVY2sU5eWORcLw3l73G?ref_=cd_ph_share_link_copy)
 
 Each time you pull new source to your repository you should run `git submodule update` to get the latest submodules as well. Since QGroundControl uses submodules, using the zip file for source download will not work. You must use git.
 
