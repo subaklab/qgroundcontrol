@@ -23,6 +23,8 @@ The license terms are set in the COPYING.md file.
 Source code for QGroundControl is kept on GitHub: https://github.com/mavlink/qgroundcontrol.
 ```
 git clone --recursive https://github.com/subaklab/qgroundcontrol.git
+cd qgroundcontrol
+git checkout Stable_V3.0_subak
 ```
 Update libs/mavlink/include/mavlink/v1.0/ardupilotmega directory. Please add Subak dialect. [Download](https://www.amazon.com/clouddrive/share/8AFEOj3amS4pNc5qfPNwsgCjyVY2sU5eWORcLw3l73G?ref_=cd_ph_share_link_copy)
 
